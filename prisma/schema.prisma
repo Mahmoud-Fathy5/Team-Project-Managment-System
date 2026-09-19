@@ -13,3 +13,52 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model User {
+  id             String          @id @default(uuid())
+  name           String
+  age            Int
+  email          String          @unique
+  password       String
+  ownedProjects  Project[]
+  assignedTasks  Task[]
+  projectMembers ProjectMember[]
+}
+
+model Project {
+  id             String          @id @default(uuid())
+  name           String
+  description    String
+  ownerId        String
+  owner          User            @relation(fields: [ownerId], references: [id])
+  projectMembers ProjectMember[]
+}
+
+model Task {
+  id           String @id @default(uuid())
+  name         String
+  description  String
+  assignedToId String
+  assignedTo   User?  @relation(fields: [assignedToId], references: [id])
+}
+
+model ProjectMember {
+  projectId String
+  userId    String
+  project   Project @relation(fields: [projectId], references: [id])
+  user      User    @relation(fields: [userId], references: [id])
+
+  @@id([projectId, userId])
+}
+
+enum TaskStatus {
+  TODO
+  INPROGRESS
+  DONE
+}
+
+enum TaskPriority {
+  LOW
+  MEDIUM
+  HIGH
+}
