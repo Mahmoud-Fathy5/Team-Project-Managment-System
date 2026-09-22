@@ -1,6 +1,13 @@
-import app from './app.js';
+import dotenv from 'dotenv';
 
-const PORT = 3000;
-app.listen(PORT, () => {
-  console.log(`listening to port ${PORT}`);
+dotenv.config();
+
+import app from './app.js';
+import { connectDB } from './config/prisma.js';
+
+connectDB();
+
+const port = process.env.PORT;
+app.listen(port, () => {
+  console.log(`listening to port ${port}`);
 });
