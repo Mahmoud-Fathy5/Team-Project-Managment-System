@@ -8,6 +8,6 @@ import { connectDB } from './config/prisma.js';
 connectDB();
 
 const port = process.env.PORT;
-app.listen(port, () => {
+app.listen(port, '0.0.0.0', () => {
   console.log(`listening to port ${port}`);
 });
