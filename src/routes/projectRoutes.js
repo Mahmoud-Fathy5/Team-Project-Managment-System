@@ -4,20 +4,32 @@ import {
   createProject,
   deleteProject,
   getAllMembers,
+  getAllProjects,
   getAllProjectTasks,
   getProject,
   updateProject,
 } from '../controllers/projectController.js';
 import { addTask } from '../controllers/taskController.js';
+import authMiddleware from '../middlewares/authMiddleware.js';
 
 const router = express.Router();
 
-router.post('/', createProject);
+router.route('/', authMiddleware).post(createProject).get(getAllProjects);
 
-router.route('/:id').get(getProject).patch(updateProject).delete(deleteProject);
+router
+  .route('/:id', authMiddleware)
+  .get(getProject)
+  .patch(updateProject)
+  .delete(deleteProject);
 
-router.route('/:id/members').post(addMembersToProject).get(getAllMembers);
+router
+  .route('/:id/members', authMiddleware)
+  .post(addMembersToProject)
+  .get(getAllMembers);
 
-router.route('/:id/tasks').get(getAllProjectTasks).post(addTask);
+router
+  .route('/:id/tasks', authMiddleware)
+  .get(getAllProjectTasks)
+  .post(addTask);
 
 export default router;

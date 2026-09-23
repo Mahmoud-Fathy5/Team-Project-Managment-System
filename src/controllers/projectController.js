@@ -1,8 +1,8 @@
 import { prisma } from '../config/prisma.js';
 
 const createProject = async (req, res) => {
-  const { name, description, ownerId } = req.body;
-
+  const { name, description } = req.body;
+  const ownerId = req.user.id;
   if (!name || !description || !ownerId) {
     return res.status(400).json({
       status: 'fail',
@@ -27,6 +27,11 @@ const createProject = async (req, res) => {
         name,
         ownerId,
         description,
+        projectMembers: {
+          create: {
+            userId: ownerId,
+          },
+        },
       },
     });
     return res.status(201).json({
@@ -43,8 +48,25 @@ const createProject = async (req, res) => {
 
 const getProject = async (req, res) => {
   try {
-    const project = await prisma.project.findUnique({
-      where: { id: req.params.id },
+    const project = await prisma.project.findFirst({
+      where: {
+        id: req.params.id,
+        projectMembers: {
+          some: {
+            userId: req.user.id,
+          },
+        },
+      },
+      include: {
+        tasks: true,
+        projectMembers: {
+          select: {
+            user: {
+              select: { id: true, email: true, name: true },
+            },
+          },
+        },
+      },
     });
 
     if (!project) {
@@ -53,10 +75,12 @@ const getProject = async (req, res) => {
         message: 'project does not exist',
       });
     }
-
+    const progress = project.tasks.filter(
+      (task) => task.status === 'DONE',
+    ).length;
     return res.status(200).json({
       status: 'success',
-      data: { project },
+      data: { project, progress },
     });
   } catch (error) {
     return res.status(500).json({
@@ -257,6 +281,30 @@ const getAllProjectTasks = async (req, res) => {
   }
 };
 
+const getAllProjects = async (req, res) => {
+  const { id } = req.user;
+  try {
+    const projects = await prisma.project.findMany({
+      where: {
+        projectMembers: {
+          some: {
+            userId: id,
+          },
+        },
+      },
+    });
+    return res.status(200).json({
+      status: 'success',
+      data: { projects },
+    });
+  } catch (error) {
+    return res.status(500).json({
+      status: 'fail',
+      message: error,
+    });
+  }
+};
+
 export {
   createProject,
   getProject,
@@ -265,4 +313,5 @@ export {
   updateProject,
   getAllMembers,
   getAllProjectTasks,
+  getAllProjects,
 };

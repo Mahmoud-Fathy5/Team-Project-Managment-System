@@ -5,10 +5,15 @@ import {
   getTask,
   updateTask,
 } from '../controllers/taskController.js';
+import authMiddleware from '../middlewares/authMiddleware.js';
 
 const router = express.Router();
 
-router.get('/', getAllTasks);
-router.route('/:id').get(getTask).patch(updateTask).delete(deleteTask);
+router.get('/', authMiddleware, getAllTasks);
+router
+  .route('/:id', authMiddleware)
+  .get(getTask)
+  .patch(updateTask)
+  .delete(deleteTask);
 
 export default router;

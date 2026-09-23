@@ -38,6 +38,15 @@ const addTask = async (req, res) => {
   }
 
   try {
+    const user = await prisma.user.findUnique({
+      where: { id: assignedToId },
+    });
+    if (!user) {
+      return res.status(400).status({
+        status: 'fail',
+        message: 'user does not exist',
+      });
+    }
     const project = await prisma.project.findUnique({
       where: { id },
     });
@@ -114,6 +123,17 @@ const updateTask = async (req, res) => {
   }
 
   try {
+    if (assignedToId) {
+      const user = await prisma.user.findUnique({
+        where: { id: assignedToId },
+      });
+      if (!user) {
+        return res.status(400).status({
+          status: 'fail',
+          message: 'user does not exist',
+        });
+      }
+    }
     const updatedTask = await prisma.task.updateManyAndReturn({
       where: { id },
       data: {
