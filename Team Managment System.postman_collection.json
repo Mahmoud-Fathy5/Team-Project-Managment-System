@@ -26,12 +26,8 @@
             },
             "url": {
               "raw": "{{base}}/projects",
-              "host": [
-                "{{base}}"
-              ],
-              "path": [
-                "projects"
-              ]
+              "host": ["{{base}}"],
+              "path": ["projects"]
             }
           },
           "response": []
@@ -43,13 +39,8 @@
             "header": [],
             "url": {
               "raw": "{{base}}/projects/c3562f7e-e73c-4cd7-a6c9-7bad51b4091e",
-              "host": [
-                "{{base}}"
-              ],
-              "path": [
-                "projects",
-                "c3562f7e-e73c-4cd7-a6c9-7bad51b4091e"
-              ]
+              "host": ["{{base}}"],
+              "path": ["projects", "c3562f7e-e73c-4cd7-a6c9-7bad51b4091e"]
             }
           },
           "response": []
@@ -70,13 +61,8 @@
             },
             "url": {
               "raw": "{{base}}/projects/0f356a8b-85f3-4cca-a0e6-e66f0ab9323d",
-              "host": [
-                "{{base}}"
-              ],
-              "path": [
-                "projects",
-                "0f356a8b-85f3-4cca-a0e6-e66f0ab9323d"
-              ]
+              "host": ["{{base}}"],
+              "path": ["projects", "0f356a8b-85f3-4cca-a0e6-e66f0ab9323d"]
             }
           },
           "response": []
@@ -97,13 +83,8 @@
             },
             "url": {
               "raw": "{{base}}/projects/c3562f7e-e73c-4cd7-a6c9-7bad51b4091e",
-              "host": [
-                "{{base}}"
-              ],
-              "path": [
-                "projects",
-                "c3562f7e-e73c-4cd7-a6c9-7bad51b4091e"
-              ]
+              "host": ["{{base}}"],
+              "path": ["projects", "c3562f7e-e73c-4cd7-a6c9-7bad51b4091e"]
             }
           },
           "response": []
@@ -115,9 +96,7 @@
             "header": [],
             "url": {
               "raw": "{{base}}/projects/c3562f7e-e73c-4cd7-a6c9-7bad51b4091e/members",
-              "host": [
-                "{{base}}"
-              ],
+              "host": ["{{base}}"],
               "path": [
                 "projects",
                 "c3562f7e-e73c-4cd7-a6c9-7bad51b4091e",
@@ -143,9 +122,7 @@
             },
             "url": {
               "raw": "{{base}}/projects/c3562f7e-e73c-4cd7-a6c9-7bad51b4091e/members",
-              "host": [
-                "{{base}}"
-              ],
+              "host": ["{{base}}"],
               "path": [
                 "projects",
                 "c3562f7e-e73c-4cd7-a6c9-7bad51b4091e",
@@ -162,9 +139,7 @@
             "header": [],
             "url": {
               "raw": "{{base}}/projects/c3562f7e-e73c-4cd7-a6c9-7bad51b4091e/tasks",
-              "host": [
-                "{{base}}"
-              ],
+              "host": ["{{base}}"],
               "path": [
                 "projects",
                 "c3562f7e-e73c-4cd7-a6c9-7bad51b4091e",
@@ -190,9 +165,7 @@
             },
             "url": {
               "raw": "{{base}}/projects/c3562f7e-e73c-4cd7-a6c9-7bad51b4091e/tasks",
-              "host": [
-                "{{base}}"
-              ],
+              "host": ["{{base}}"],
               "path": [
                 "projects",
                 "c3562f7e-e73c-4cd7-a6c9-7bad51b4091e",
@@ -209,12 +182,8 @@
             "header": [],
             "url": {
               "raw": "{{base}}/projects",
-              "host": [
-                "{{base}}"
-              ],
-              "path": [
-                "projects"
-              ]
+              "host": ["{{base}}"],
+              "path": ["projects"]
             }
           },
           "response": []
@@ -240,12 +209,8 @@
             },
             "url": {
               "raw": "{{base}}/tasks",
-              "host": [
-                "{{base}}"
-              ],
-              "path": [
-                "tasks"
-              ]
+              "host": ["{{base}}"],
+              "path": ["tasks"]
             }
           },
           "response": []
@@ -266,13 +231,8 @@
             },
             "url": {
               "raw": "{{base}}/tasks/3228b757-f36e-4638-843d-4c5d4f777d3d",
-              "host": [
-                "{{base}}"
-              ],
-              "path": [
-                "tasks",
-                "3228b757-f36e-4638-843d-4c5d4f777d3d"
-              ]
+              "host": ["{{base}}"],
+              "path": ["tasks", "3228b757-f36e-4638-843d-4c5d4f777d3d"]
             }
           },
           "response": []
@@ -284,13 +244,8 @@
             "header": [],
             "url": {
               "raw": "{{base}}/tasks/3228b757-f36e-4638-843d-4c5d4f777d3d",
-              "host": [
-                "{{base}}"
-              ],
-              "path": [
-                "tasks",
-                "3228b757-f36e-4638-843d-4c5d4f777d3d"
-              ]
+              "host": ["{{base}}"],
+              "path": ["tasks", "3228b757-f36e-4638-843d-4c5d4f777d3d"]
             }
           },
           "response": []
@@ -302,13 +257,8 @@
             "header": [],
             "url": {
               "raw": "{{base}}/tasks/3228b757-f36e-4638-843d-4c5d4f777d3d",
-              "host": [
-                "{{base}}"
-              ],
-              "path": [
-                "tasks",
-                "3228b757-f36e-4638-843d-4c5d4f777d3d"
-              ]
+              "host": ["{{base}}"],
+              "path": ["tasks", "3228b757-f36e-4638-843d-4c5d4f777d3d"]
             }
           },
           "response": []
@@ -334,13 +284,8 @@
             },
             "url": {
               "raw": "{{base}}/auth/register",
-              "host": [
-                "{{base}}"
-              ],
-              "path": [
-                "auth",
-                "register"
-              ]
+              "host": ["{{base}}"],
+              "path": ["auth", "register"]
             }
           },
           "response": []
@@ -361,13 +306,8 @@
             },
             "url": {
               "raw": "{{base}}/auth/login",
-              "host": [
-                "{{base}}"
-              ],
-              "path": [
-                "auth",
-                "login"
-              ]
+              "host": ["{{base}}"],
+              "path": ["auth", "login"]
             }
           },
           "response": []
@@ -379,13 +319,8 @@
             "header": [],
             "url": {
               "raw": "{{base}}/auth/logout",
-              "host": [
-                "{{base}}"
-              ],
-              "path": [
-                "auth",
-                "logout"
-              ]
+              "host": ["{{base}}"],
+              "path": ["auth", "logout"]
             }
           },
           "response": []
@@ -396,7 +331,7 @@
   "variable": [
     {
       "key": "base",
-      "value": ""
+      "value": "https://team-project-managment-system-production.up.railway.app/api/v1"
     }
   ]
 }
