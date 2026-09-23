@@ -1,4 +1,4 @@
-import { prisma } from '../config/prisma';
+import { prisma } from '../config/prisma.js';
 
 const taskMiddleware = async (req, res, next) => {
   try {

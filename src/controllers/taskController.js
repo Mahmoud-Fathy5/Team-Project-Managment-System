@@ -3,7 +3,7 @@ import { prisma } from '../config/prisma.js';
 const validPri = ['LOW', 'MEDIUM', 'HIGH'];
 
 const getAllTasks = async (req, res) => {
-  const { userId } = req.body; // TODO changed to .user after implemeting auth
+  const userId = req.user.id;
   try {
     const tasks = await prisma.task.findMany({
       where: { assignedToId: userId },
@@ -42,20 +42,23 @@ const addTask = async (req, res) => {
       where: { id: assignedToId },
     });
     if (!user) {
-      return res.status(400).status({
+      return res.status(400).json({
         status: 'fail',
         message: 'user does not exist',
       });
     }
-    const project = await prisma.project.findUnique({
-      where: { id },
-    });
-    if (!project) {
-      return res.status(404).json({
+    const project = req.project;
+    const isProjectMember = project.projectMembers.some(
+      (m) => m.userId === assignedToId,
+    );
+
+    if (!isProjectMember) {
+      return res.status(403).json({
         status: 'fail',
-        message: 'project does not exist',
+        message: 'user must be a member of this project',
       });
     }
+
     const task = await prisma.task.create({
       data: {
         name,
@@ -79,30 +82,12 @@ const addTask = async (req, res) => {
 };
 
 const getTask = async (req, res) => {
-  const { id } = req.params;
+  const task = req.task;
 
-  try {
-    const task = await prisma.task.findUnique({
-      where: { id },
-    });
-
-    if (!task) {
-      return res.status(404).json({
-        status: 'fail',
-        message: 'task does not exist',
-      });
-    }
-
-    return res.status(200).json({
-      status: 'success',
-      data: { task },
-    });
-  } catch (error) {
-    return res.status(500).json({
-      status: 'fail',
-      message: error,
-    });
-  }
+  return res.status(200).json({
+    status: 'success',
+    data: { task },
+  });
 };
 
 const updateTask = async (req, res) => {
@@ -131,6 +116,16 @@ const updateTask = async (req, res) => {
         return res.status(400).status({
           status: 'fail',
           message: 'user does not exist',
+        });
+      }
+      const isProjectMember = req.project.projectMembers.some(
+        (m) => m.userId === assignedToId,
+      );
+
+      if (!isProjectMember) {
+        return res.status(403).json({
+          status: 'fail',
+          message: 'user must be a member of this project',
         });
       }
     }
