@@ -85,7 +85,7 @@ const getProject = async (req, res) => {
   } catch (error) {
     return res.status(500).json({
       status: 'fail',
-      message: error,
+      message: error.message,
     });
   }
 };
@@ -105,7 +105,7 @@ const deleteProject = async (req, res) => {
   } catch (error) {
     return res.status(500).json({
       status: 'fail',
-      message: error,
+      message: error.message,
     });
   }
 };
@@ -179,7 +179,7 @@ const addMembersToProject = async (req, res) => {
   } catch (error) {
     return res.status(500).json({
       status: 'fail',
-      message: error,
+      message: error.message,
     });
   }
 };
@@ -216,7 +216,7 @@ const updateProject = async (req, res) => {
   } catch (error) {
     return res.status(500).json({
       status: 'fail',
-      message: error,
+      message: error.message,
     });
   }
 };
@@ -257,7 +257,7 @@ const getAllMembers = async (req, res) => {
   } catch (error) {
     return res.status(500).json({
       status: 'fail',
-      message: error,
+      message: error.message,
     });
   }
 };
@@ -276,7 +276,7 @@ const getAllProjectTasks = async (req, res) => {
   } catch (error) {
     return res.status(500).json({
       status: 'fail',
-      message: error,
+      message: error.message,
     });
   }
 };
@@ -300,7 +300,7 @@ const getAllProjects = async (req, res) => {
   } catch (error) {
     return res.status(500).json({
       status: 'fail',
-      message: error,
+      message: error.message,
     });
   }
 };
