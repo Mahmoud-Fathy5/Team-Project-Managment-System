@@ -18,7 +18,7 @@ app.use('/api/v1/projects', projectRouter);
 app.use('/api/v1/tasks', taskRouter);
 app.use('/api/v1/auth', authRouter);
 
-app.all('*', (req, res) => {
+app.use((req, res) => {
   res.status(404).json({
     status: 'fail',
     message: 'page does not exist',

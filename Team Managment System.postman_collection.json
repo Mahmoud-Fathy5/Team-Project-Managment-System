@@ -1,0 +1,402 @@
+{
+  "info": {
+    "_postman_id": "e3ec2572-1da7-460e-b981-40d83eeea453",
+    "name": "Team Mangment System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "51972427",
+    "_collection_link": "https://go.postman.co/collection/51972427-e3ec2572-1da7-460e-b981-40d83eeea453?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "project",
+      "item": [
+        {
+          "name": "create project",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Nurse Robot\",\r\n    \"description\": \"Building a Nurse Robot for Microprocessor course using STM32 and ARM assembly\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base}}/projects",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "projects"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get project",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base}}/projects/c3562f7e-e73c-4cd7-a6c9-7bad51b4091e",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "projects",
+                "c3562f7e-e73c-4cd7-a6c9-7bad51b4091e"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update project",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Robot Nurse Using ARM assembly\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base}}/projects/0f356a8b-85f3-4cca-a0e6-e66f0ab9323d",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "projects",
+                "0f356a8b-85f3-4cca-a0e6-e66f0ab9323d"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete project",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base}}/projects/c3562f7e-e73c-4cd7-a6c9-7bad51b4091e",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "projects",
+                "c3562f7e-e73c-4cd7-a6c9-7bad51b4091e"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get all members",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base}}/projects/c3562f7e-e73c-4cd7-a6c9-7bad51b4091e/members",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "projects",
+                "c3562f7e-e73c-4cd7-a6c9-7bad51b4091e",
+                "members"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add member",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"userId\": \"32540632-fb1d-4888-b8c5-207eb0b1c045\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base}}/projects/c3562f7e-e73c-4cd7-a6c9-7bad51b4091e/members",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "projects",
+                "c3562f7e-e73c-4cd7-a6c9-7bad51b4091e",
+                "members"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get project's tasks",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base}}/projects/c3562f7e-e73c-4cd7-a6c9-7bad51b4091e/tasks",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "projects",
+                "c3562f7e-e73c-4cd7-a6c9-7bad51b4091e",
+                "tasks"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add task to project",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"buy hardware\",\r\n    \"description\": \"identify all the needed hardware and purchase it\",\r\n    \"priority\": \"HIGH\",\r\n    \"assignedToId\": \"32540632-fb1d-4888-b8c5-207eb0b1c045\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base}}/projects/c3562f7e-e73c-4cd7-a6c9-7bad51b4091e/tasks",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "projects",
+                "c3562f7e-e73c-4cd7-a6c9-7bad51b4091e",
+                "tasks"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get all projects",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base}}/projects",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "projects"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "task",
+      "item": [
+        {
+          "name": "get all tasks",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base}}/tasks",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "tasks"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update task",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"priority\": \"medium\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base}}/tasks/3228b757-f36e-4638-843d-4c5d4f777d3d",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "tasks",
+                "3228b757-f36e-4638-843d-4c5d4f777d3d"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get task",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base}}/tasks/3228b757-f36e-4638-843d-4c5d4f777d3d",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "tasks",
+                "3228b757-f36e-4638-843d-4c5d4f777d3d"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete task",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base}}/tasks/3228b757-f36e-4638-843d-4c5d4f777d3d",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "tasks",
+                "3228b757-f36e-4638-843d-4c5d4f777d3d"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "auth",
+      "item": [
+        {
+          "name": "register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Ahmed\",\r\n    \"age\": 20,\r\n    \"email\": \"a@gmail.com\",\r\n    \"password\": \"pass\"\r\n\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base}}/auth/register",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"mahmoud@gmail.com\",\r\n    \"password\": \"password\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base}}/auth/login",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "logout",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base}}/auth/logout",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "auth",
+                "logout"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base",
+      "value": ""
+    }
+  ]
+}

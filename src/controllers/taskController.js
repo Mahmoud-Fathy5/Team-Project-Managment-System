@@ -113,7 +113,7 @@ const updateTask = async (req, res) => {
         where: { id: assignedToId },
       });
       if (!user) {
-        return res.status(400).status({
+        return res.status(400).json({
           status: 'fail',
           message: 'user does not exist',
         });
