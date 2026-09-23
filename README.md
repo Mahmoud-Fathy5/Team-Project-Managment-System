@@ -118,7 +118,7 @@ The server will start listening at `http://localhost:3000/api/v1`.
 
 ## 🗄️ Database Design & Models
 
-Refer to the included `dbdiagram.png` for the visual entity-relationship diagram.
+![DB Diagram](./dbdiagram.png)
 
 - **User**: Stores user profile (`name`, `email`, `password` hash, `age`, `hashedRefreshToken`). Has relations to owned projects, assigned tasks, and project memberships.
 - **Project**: Stores project details (`name`, `description`, `ownerId`). Deleting a project cascades deletion to associated tasks and project member records.
